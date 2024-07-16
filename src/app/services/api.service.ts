@@ -20,4 +20,9 @@ export class ApiServices{
         const url = `${this.api}/products/category/${category}`
         return this.http.get<Product[]>(url)
     }
+    // getting all the products 
+    getAllProducts():Observable<Product[]>{
+        const url = `${this.api}/products`
+        return this.http.get<Product[]>(url)
+    }
 }

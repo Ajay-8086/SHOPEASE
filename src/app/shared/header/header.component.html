@@ -6,7 +6,7 @@
   </div>
   <div class="w-full  md:self-center self-end">
     <div class="flex px-4 py-3 border border-gray-400 overflow-hidden mx-auto font-[sans-serif] rounded-full transition-all duration-300 ease-in-out focus-within:max-w-lg w-full lg:w-1/2 items-center">
-      <input type="text" placeholder="Search Something..." class="w-full outline-none bg-transparent text-[#000] text-sm" />
+      <input [(ngModel)]="searchTerm" (input)="onSearchInput()" type="text" placeholder="Search Something..." class="w-full outline-none bg-transparent text-[#000] text-sm" />
       <mat-icon class="text-[#000]">search</mat-icon>
     </div>
   </div>
