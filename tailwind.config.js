@@ -4,7 +4,11 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        customWhiteTransparent: 'rgba(255, 248, 250)', // Adding a custom color with transparency
+      },
+    },
   },
   plugins: [],
 }
