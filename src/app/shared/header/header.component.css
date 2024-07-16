@@ -1,0 +1,13 @@
+.scrolled{
+    box-shadow: 0 2px 20px rgba(74, 72, 72, 0.1);
+    background-color: #fff;
+}
+
+@media (max-width: 768px) {
+    .self-end {
+      width: 100%;
+    }
+    .self-end .flex {
+      width: 100%;
+    }
+  }

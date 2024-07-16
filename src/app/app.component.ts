@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ShopEase';
+  isScrolled:boolean = false
+  @HostListener('window:scroll')
+  onScroll(){
+      // check the user scrolled
+      this.isScrolled = window.scrollY > 0
+  }
+  ngOnInit(){
+      // checking the initial scroll 
+      this.isScrolled = window.scrollY > 0
+
+  }
 }
