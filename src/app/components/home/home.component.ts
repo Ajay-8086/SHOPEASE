@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from 'src/app/models/product.interface';
 import { ApiServices } from 'src/app/services/api.service';
 import { SearchService } from 'src/app/services/search.service';
@@ -16,7 +17,7 @@ export class HomeComponent implements OnInit {
   filteredProducts: Product[] = [];
   searchTerm: string = '';
 
-  constructor(private apiServices: ApiServices, private searchService: SearchService) {}
+  constructor(private apiServices: ApiServices, private searchService: SearchService,private router:Router) {}
 
   ngOnInit(): void {
     this.loadCategories();
@@ -64,10 +65,7 @@ export class HomeComponent implements OnInit {
 
   // Filtering products based on search term and selected category
   filterProducts(): void {
-    let filtered = this.allProducts;
-    console.log(filtered);
-    console.log(this.searchTerm,'searchterm');
-    
+    let filtered = this.allProducts;    
     if (this.searchTerm) {
       filtered = filtered.filter(product => 
         product.title.toLowerCase().includes(this.searchTerm.toLowerCase())
@@ -79,5 +77,9 @@ export class HomeComponent implements OnInit {
     }
 
     this.filteredProducts = filtered;
+  }
+  //navigating to the product page
+  goToProduct(id:number):void{
+    this.router.navigate(['/products',id])
   }
 }

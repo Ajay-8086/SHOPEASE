@@ -25,4 +25,9 @@ export class ApiServices{
         const url = `${this.api}/products`
         return this.http.get<Product[]>(url)
     }
+    // getting the product detail
+    getProductById(id:number):Observable<Product>{
+        const url = `${this.api}/products/${id}`
+        return this.http.get<Product>(url)
+    }
 }
