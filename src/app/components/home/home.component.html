@@ -39,7 +39,7 @@
     <!-- Product grid -->
     <div *ngIf="!isLoading && filteredProducts.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <!-- Product Card -->
-      <div class="bg-white p-6 rounded-lg shadow-md" *ngFor="let product of filteredProducts" (click)="goToProduct(product.id)">
+      <div class="bg-white p-6 rounded-lg shadow-md cursor-pointer" *ngFor="let product of filteredProducts" (click)="goToProduct(product.id)">
         <img [src]="product.image" [alt]="product.title" class="w-full h-48 object-contain mb-4">
         <h2 class="text-lg font-semibold mb-2">{{ product.title | titlecase }}</h2>
         <div class="text-gray-600 mb-2">{{ product.price | currency }}</div>

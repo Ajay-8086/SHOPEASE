@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Cart, CartProducts } from 'src/app/models/cart.interface';
 import { Product } from 'src/app/models/product.interface';
 import { ApiServices } from 'src/app/services/api.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -12,11 +13,14 @@ export class CartComponent {
 
   cartProducts:CartProducts[] =[] 
   allProducts:Product[] = []
-  constructor(private apiService:ApiServices){}
+  isLoading:boolean = false
+  constructor(private apiService:ApiServices , private cartService:CartService){}
   ngOnInit() {
+    this.isLoading = true
     this.apiService.getAllProducts().subscribe(products => {
       this.allProducts = products;
       this.loadCart();
+      this.isLoading = false
     });
     
   }
@@ -52,6 +56,6 @@ export class CartComponent {
   // delete the product from the cart 
   deleteProduct(id:number){
    this.cartProducts =  this.cartProducts.filter(product=>product.id !== id)
-   this.apiService.removeFromCart()
+   this.cartService.removeFromCart()
   }
 }

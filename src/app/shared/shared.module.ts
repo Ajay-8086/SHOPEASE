@@ -4,7 +4,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
-
+import { RouterModule } from '@angular/router';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 @NgModule({
@@ -15,7 +16,10 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    RouterModule,
+    MatBadgeModule
+
   ],
   exports:[
     HeaderComponent,

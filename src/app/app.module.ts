@@ -8,15 +8,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {  HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { ProductComponent } from './components/product/product.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RatingComponent } from './components/product/rating/rating.component';
+import { CartComponent } from './components/cart/cart.component';
+import { LoginComponent } from './components/login/login.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     RatingComponent,
-    ProductComponent
+    ProductComponent,
+    CartComponent,
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +30,8 @@ import { RatingComponent } from './components/product/rating/rating.component';
     SharedModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
